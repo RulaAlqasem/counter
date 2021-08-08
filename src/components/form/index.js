@@ -2,69 +2,44 @@ import React from 'react';
 
 import './form.scss';
 
+class Form extends React.Component {
 
-// class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      method: "",
+      url: ""
 
-//   handleSubmit = e => {
-//     e.preventDefault();
-//     const formData = {
-//       method: 'GET',
-//       url: 'https://pokeapi.co/api/v2/pokemon',
-//     };
-//     this.props.handleApiCall(formData);
-//   }
-
-//   render() {
-//     return (
-//       <>
-//         <form onSubmit={this.handleSubmit}>
-//           <label >
-//             <span>URL: </span>
-//             <input name='url' type='text' />
-//             <button type="submit">GO!</button>
-//           </label>
-//           <label className="methods">
-//             <span id="get">GET</span>
-//             <span id="post">POST</span>
-//             <span id="put">PUT</span>
-//             <span id="delete">DELETE</span>
-//           </label>
-//         </form>
-//       </>
-//     );
-//   }
-// }
-
-// export default Form;
-
-
-function Form(props) {
-  function handleSubmit(e) {
+    }
+  }
+  handleSubmit = e => {
     e.preventDefault();
     const formData = {
-      method: 'GET',
-      url: 'https://pokeapi.co/api/v2/pokemon',
+      method: this.state.method,
+      url: this.state.url
     };
-    props.handleApiCall(formData);
+    this.props.handleApiCall(formData);
   }
-  return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label >
-          <span>URL: </span>
-          <input name='url' type='text' />
-          <button type="submit">GO!</button>
-        </label>
-        <label className="methods">
-          <span id="get">GET</span>
-          <span id="post">POST</span>
-          <span id="put">PUT</span>
-          <span id="delete">DELETE</span>
-        </label>
-      </form>
-    </>
-  )
+
+  render() {
+    return (
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <label >
+            <span>URL: </span>
+            <input name='url' type='text' onChange={(event) => this.setState({ url: event.target.value })} />
+            <button type="submit">GO!</button>
+          </label>
+          <label className="methods">
+            <span id="get" onClick={() => { this.setState({ method: "GET" }) }}>GET</span>
+            <span id="post" onClick={() => { this.setState({ method: "POST" }) }}>POST</span>
+            <span id="put" onClick={() => { this.setState({ method: "PUT" }) }}>PUT</span>
+            <span id="delete" onClick={() => { this.setState({ method: "Delete" }) }}>DELETE</span>
+          </label>
+        </form>
+      </>
+    );
+  }
 }
 
-export default Form
-
+export default Form;
