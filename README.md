@@ -39,7 +39,7 @@ Students will be creating and styling a Counter application. Look for the follow
 
 ![](./resty1uml.png)
 
-## [sand pox link](https://codesandbox.io/s/throbbing-fire-8giry)
+## [sand pox link](https://codesandbox.io/s/naughty-pike-7l0m8?file=/src/app.js)
 
 ## [commits link](https://github.com/RulaAlqasem/resty/commits/master)
 
