@@ -1,5 +1,5 @@
 
-import { get } from 'mongoose';
+
 import React, { useState } from 'react';
 import './form.scss';
 
@@ -13,6 +13,7 @@ function Form(props) {
 
   async function handleSubmit(e) {
     console.log(jsonObj);
+    console.log(setHestory);
     e.preventDefault();
 
     const formData = {
