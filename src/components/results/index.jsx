@@ -25,7 +25,7 @@ function Results(props) {
       {props.data ? <JSONPretty id="json-pretty" data={props.data.count} mainStyle="padding:1em" valueStyle="font-size:1.5em" style={{ fontSize: "1.4em" }} ></JSONPretty> : null}
 
       <h1> "result " [ </h1>
-      {props.data ? props.data.results.map((ele) => <JSONPretty id="json-pretty" data={ele} mainStyle="padding:1em" valueStyle="font-size:1.5em" style={{ fontSize: "1.4em" }} ></JSONPretty>) : null}
+      {props.data ? props.data.results.map((ele, idx) => <JSONPretty id="json-pretty" key={idx} data={ele} mainStyle="padding:1em" valueStyle="font-size:1.5em" style={{ fontSize: "1.4em" }} ></JSONPretty>) : null}
       <h1>   ] </h1>
     </section>
   )
