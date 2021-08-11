@@ -44,3 +44,10 @@ Students will be creating and styling a Counter application. Look for the follow
 ## [commits link](https://github.com/RulaAlqasem/resty/commits/master)
 
 ## [repo link ](https://github.com/RulaAlqasem/resty)
+
+
+
+# lab 28 :
+- [pull req link](https://github.com/RulaAlqasem/resty/pull/1)
+- [repo link ](https://github.com/RulaAlqasem/resty)
+
