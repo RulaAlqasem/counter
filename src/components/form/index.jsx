@@ -9,7 +9,7 @@ function Form(props) {
   const [jsonObj, setJsonObj] = useState(null)
 
   async function handleSubmit(e) {
-
+    console.log(jsonObj);
     e.preventDefault();
 
     const formData = {
