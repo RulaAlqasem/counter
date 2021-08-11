@@ -1,4 +1,5 @@
 
+import { get } from 'mongoose';
 import React, { useState } from 'react';
 import './form.scss';
 
@@ -7,7 +8,7 @@ function Form(props) {
   const [url, setUrl] = useState("")
   const [textarea, setTextarea] = useState(false)
   const [jsonObj, setJsonObj] = useState(null)
-
+  const [hestory, setHestory] = useState([])
 
 
   async function handleSubmit(e) {
@@ -19,18 +20,16 @@ function Form(props) {
       url: url,
     };
 
-
+    hestory.push(formData);
 
     try {
-      const req = await fetch(url, {
-        method: method,
-      })
+      const req = await fetch(url)
 
       const data = await req.json();
 
 
 
-      props.handleApiCall(formData, data);
+      props.handleApiCall(formData, data, hestory);
       props.loadFunction(true)
     } catch (e) {
       console.log(e);
@@ -49,10 +48,10 @@ function Form(props) {
           <button data-testid="goBtn" type="submit" >GO!</button>
         </label>
         <label className="methods">
-          <span tabindex="4" id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false); }} >GET</span>
-          <span tabindex="4" id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >POST</span>
-          <span tabindex="4" id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >PUT</span>
-          <span tabindex="4" id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }} >DELETE</span>
+          <span tabIndex="4" id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false); }} >GET</span>
+          <span tabIndex="4" id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >POST</span>
+          <span tabIndex="4" id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >PUT</span>
+          <span tabIndex="4" id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }} >DELETE</span>
         </label>
         {textarea &&
           <div className="textarea" >
