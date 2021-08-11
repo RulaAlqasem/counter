@@ -8,6 +8,8 @@ function Form(props) {
   const [textarea, setTextarea] = useState(false)
   const [jsonObj, setJsonObj] = useState(null)
 
+
+
   async function handleSubmit(e) {
     console.log(jsonObj);
     e.preventDefault();
@@ -47,15 +49,16 @@ function Form(props) {
           <button data-testid="goBtn" type="submit" >GO!</button>
         </label>
         <label className="methods">
-          <span id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }}>GET</span>
-          <span id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }}>POST</span>
-          <span id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }}  >PUT</span>
-          <span id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }} >DELETE</span>
+          <span tabindex="4" id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false); }} >GET</span>
+          <span tabindex="4" id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >POST</span>
+          <span tabindex="4" id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >PUT</span>
+          <span tabindex="4" id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }} >DELETE</span>
         </label>
-        {textarea && <label >
-          <span>JSON object: </span>
-          <input name='textarea' type='text' onChange={(e) => { setJsonObj(e.target.value) }} />
-        </label>}
+        {textarea &&
+          <div className="textarea" >
+            <span>JSON object: </span>
+            <textarea type='text' onChange={(e) => { setJsonObj(e.target.value) }} />
+          </div>}
       </form>
     </>
   )
