@@ -8,6 +8,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
+import History from './components/history/History';
 
 
 
@@ -16,10 +17,10 @@ import Results from './components/results';
 function App(props) {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
-
+  const [history, setHistory] = useState(null);
 
   const [isLoading, setIsLoading] = useState(false);
-  async function callApi(requestParams, newd) {
+  async function callApi(requestParams, newd, hestory) {
     // mock output
 
     const data = {
@@ -29,7 +30,8 @@ function App(props) {
     };
     await setData(data);
     await setRequestParams(requestParams)
-
+    await setHistory(hestory)
+    console.log(hestory, "xtcyvuhbi");
 
   }
 
@@ -46,6 +48,10 @@ function App(props) {
       <div>Request Method: {requestParams.method}</div>
       <div>URL: {requestParams.url}</div>
       <Form handleApiCall={callApi} loadFunction={loadFunction} />
+      <History history={history} />
+
+
+
       {
         !isLoading ? <div>Loading...</div> : <Results data={data} />
       }
