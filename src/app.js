@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './app.scss';
 
@@ -18,7 +18,7 @@ function App(props) {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
   const [history, setHistory] = useState(null);
-
+  const [newhis, setNewhis] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   async function callApi(requestParams, newd, hestory) {
     // mock output
@@ -33,13 +33,30 @@ function App(props) {
     await setHistory(hestory)
     console.log(hestory, "xtcyvuhbi");
 
+
   }
 
+
+  function deleteFromHis(key) {
+
+    let j = []
+    history.map((e, idx) => {
+      if (idx !== key) {
+        j.push(e)
+      }
+    })
+    setHistory(j)
+    setNewhis(j)
+  }
   async function loadFunction(status) {
 
     setIsLoading(status)
 
   }
+  // useEffect(() => {
+
+  // }, [method])
+
 
 
   return (
@@ -47,15 +64,19 @@ function App(props) {
       <Header />
       <div>Request Method: {requestParams.method}</div>
       <div>URL: {requestParams.url}</div>
-      <Form handleApiCall={callApi} loadFunction={loadFunction} />
-      <History history={history} />
+      <Form handleApiCall={callApi} loadFunction={loadFunction} historyd={history} newhis={newhis} />
+
 
 
 
       {
-        !isLoading ? <div>Loading...</div> : <Results data={data} />
+        !isLoading ? <div>Loading...</div> : <> <Results data={data} />      </>
       }
+      <History history={history} deleteFromHis={deleteFromHis} />
       <Footer />
+
+
+
     </React.Fragment>
   )
 }
