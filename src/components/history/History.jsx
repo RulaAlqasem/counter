@@ -33,7 +33,8 @@ function History(props) {
           <th>delete from history</th>
         </tr>
 
-        {props.history ? props.history.map((event, idx) => {
+        {props.history && props.history.map((event, idx) => {
+
 
           return (
             <tr key={event.toString()}>
@@ -45,7 +46,7 @@ function History(props) {
               <td onClick={(event) => { props.deleteFromHis(idx) }}>Delete</td>
             </tr>
           )
-        }) : <tr>impty</tr>}
+        })}
 
 
       </table>

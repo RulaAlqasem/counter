@@ -72,7 +72,7 @@ function App(props) {
       {
         !isLoading ? <div>Loading...</div> : <> <Results data={data} />      </>
       }
-      <History history={history} deleteFromHis={deleteFromHis} />
+      {history && <History history={history} deleteFromHis={deleteFromHis} />}
       <Footer />
 
 

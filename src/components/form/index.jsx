@@ -12,6 +12,11 @@ function Form(props) {
 
 
   const c = props.historyd
+  useEffect(() => {
+
+    props.newhis && setHestory(props.newhis)
+
+  }, [method])
   async function handleSubmit(e) {
     console.log(jsonObj);
     console.log(setHestory);
@@ -44,11 +49,7 @@ function Form(props) {
 
 
   }
-  useEffect(() => {
-    props.loadFunction(false)
-    props.newhis && setHestory(props.newhis)
 
-  }, [method])
 
   function focus(method) {
     document.getElementById(`${method}`).focus();
@@ -60,13 +61,13 @@ function Form(props) {
         <label >
           <span>URL: </span>
           <input name='url' type='text' onChange={(e) => { setUrl(e.target.value) }} />
-          <button data-testid="goBtn" type="submit" onClick={() => focus(method)} >GO!</button>
+          <button data-testid="goBtn" type="submit"  >GO!</button>
         </label>
         <label className="methods">
-          <span tabIndex="4" focus="" id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false); }} >GET</span>
-          <span tabIndex="4" id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >POST</span>
-          <span tabIndex="4" id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true) }} >PUT</span>
-          <span tabIndex="4" id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false) }} >DELETE</span>
+          <span tabIndex="4" focus="" id="GET" onClick={(e) => { setMethod(e.target.id); setTextarea(false); props.loadFunction(false) }} >GET</span>
+          <span tabIndex="4" id="POST" onClick={(e) => { setMethod(e.target.id); setTextarea(true); props.loadFunction(false) }} >POST</span>
+          <span tabIndex="4" id="PUT" onClick={(e) => { setMethod(e.target.id); setTextarea(true); props.loadFunction(false) }} >PUT</span>
+          <span tabIndex="4" id="DELETE" onClick={(e) => { setMethod(e.target.id); setTextarea(false); props.loadFunction(false) }} >DELETE</span>
         </label>
         {textarea &&
           <div className="textarea" >
