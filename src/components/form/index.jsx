@@ -37,9 +37,9 @@ function Form(props) {
   const [hestory, setHestory] = useState([])
   const [history2, dispatch] = useReducer(historyReducer, initialState);
 
-
+  let c = props.newhis
   useEffect(() => {
-    let c = props.newhis
+
     c && setHestory(c)
 
   }, [method])

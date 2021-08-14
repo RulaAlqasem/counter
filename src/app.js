@@ -44,7 +44,7 @@ function App(props) {
     let j = []
     history.map((e, idx) => {
       if (idx !== key) {
-        j.push(e)
+        return j.push(e)
       }
     })
     setHistory(j)
