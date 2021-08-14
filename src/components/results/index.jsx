@@ -1,18 +1,6 @@
 import React from 'react';
 import JSONPretty from 'react-json-pretty';
 import 'react-json-pretty/themes/monikai.css';
-// class Results extends React.Component {
-//   render() {
-//     return (
-//       <section>
-//         <pre>{this.props.data ? JSON.stringify(this.props.data, undefined, 2) : null}</pre>
-//       </section>
-//     );
-//   }
-// }
-
-// export default Results;
-
 
 
 function Results(props) {
@@ -27,6 +15,8 @@ function Results(props) {
       <h1> "result " [ </h1>
       {props.data ? props.data.results.map((ele, idx) => <JSONPretty id="json-pretty" key={idx} data={ele} mainStyle="padding:1em" valueStyle="font-size:1.5em" style={{ fontSize: "1.4em" }} ></JSONPretty>) : null}
       <h1>   ] </h1>
+
+
     </section>
   )
 }
