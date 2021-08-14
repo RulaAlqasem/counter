@@ -38,13 +38,13 @@ function Form(props) {
   const [history2, dispatch] = useReducer(historyReducer, initialState);
 
 
-  const c = props.historyd
   useEffect(() => {
-
-    props.newhis && setHestory(props.newhis)
+    let c = props.newhis
+    c && setHestory(c)
 
   }, [method])
   async function handleSubmit(e) {
+    console.log(history2);
     console.log(jsonObj);
     console.log(setHestory);
     e.preventDefault();
