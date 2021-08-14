@@ -39,8 +39,7 @@ function Form(props) {
 
   let c = props.newhis
   useEffect(() => {
-
-    c && setHestory(c)
+    if (c) setHestory(c)
 
   }, [method])
   async function handleSubmit(e) {
