@@ -39,6 +39,7 @@ function Form(props) {
 
   let c = props.newhis
   useEffect(() => {
+    console.log("hi");
     if (c) setHestory(c)
 
   }, [method])

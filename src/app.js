@@ -46,6 +46,7 @@ function App(props) {
       if (idx !== key) {
         return j.push(e)
       }
+      return
     })
     setHistory(j)
     setNewhis(j)
