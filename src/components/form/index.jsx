@@ -1,7 +1,33 @@
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import './form.scss';
+
+
+
+const initialState = {
+  history: []
+};
+
+
+function historyReducer(state = initialState, action) {
+  const { type, payload } = action;
+  switch (type) {
+    case 'ADD_toHistory':
+
+      const history = [...state.history, payload.history];
+      return { history };
+    default:
+      return state;
+  }
+}
+function addAction(history) {
+  return {
+    type: 'ADD_toHistory',
+    payload: { history },
+  };
+}
+
 
 function Form(props) {
   const [method, setMethod] = useState("GET")
@@ -9,6 +35,7 @@ function Form(props) {
   const [textarea, setTextarea] = useState(false)
   const [jsonObj, setJsonObj] = useState(null)
   const [hestory, setHestory] = useState([])
+  const [history2, dispatch] = useReducer(historyReducer, initialState);
 
 
   const c = props.historyd
@@ -28,6 +55,8 @@ function Form(props) {
     };
 
     hestory.push(formData);
+    dispatch(addAction(formData))
+
     let data;
     try {
       // if (method === "GET" || method === "Delete") 
@@ -46,7 +75,7 @@ function Form(props) {
       console.log(e);
 
     }
-
+    e.target.reset()
 
   }
 

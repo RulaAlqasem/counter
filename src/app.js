@@ -1,3 +1,5 @@
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 import React, { useState, useEffect } from 'react';
 
 import './app.scss';
@@ -28,9 +30,9 @@ function App(props) {
       count: newd.count,
       results: newd.results
     };
-    await setData(data);
-    await setRequestParams(requestParams)
-    await setHistory(hestory)
+    setData(data);
+    setRequestParams(requestParams)
+    setHistory(hestory)
     console.log(hestory, "xtcyvuhbi");
 
 
@@ -70,7 +72,13 @@ function App(props) {
 
 
       {
-        !isLoading ? <div>Loading...</div> : <> <Results data={data} />      </>
+        !isLoading ? <Loader
+          type="Puff"
+          color="#00BFFF"
+          height={100}
+          width={100}
+        //3 secs
+        /> : <> <Results data={data} />      </>
       }
       {history && <History history={history} deleteFromHis={deleteFromHis} />}
       <Footer />
