@@ -63,12 +63,12 @@ function App(props) {
     console.log(history1);
     console.log(hestory, "xtcyvuhbi");
     dispatch(addAction(hestory))
-    // setHistory(hestory)
+    setHistory(hestory)
 
 
 
 
-    history.push(hestory[0])
+    // history.push(hestory[0])
     localStorage.setItem('history', JSON.stringify(history));
 
   }
@@ -106,6 +106,7 @@ function App(props) {
     // console.log("paars", JSON.parse(window.localStorage.getItem('history')));
     setHistory(JSON.parse(localStorage.getItem('history')))
     // dispatch(addAction(history))
+
 
 
   }, [])
