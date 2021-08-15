@@ -51,9 +51,9 @@ Students will be creating and styling a Counter application. Look for the follow
 # lab 28 :
 
 ![](./newwuml.png)
-- [pull req link](https://github.com/RulaAlqasem/resty/pull/8)
+- [pull req link](https://github.com/RulaAlqasem/resty/pull/12)
 - [repo link ](https://github.com/RulaAlqasem/resty)
-- [netlify](https://6118b374fc2c0bdac36c65a1--peaceful-ardinghelli-789209.netlify.app/)
+- [netlify](https://app.netlify.com/sites/ecstatic-bell-ef344d/deploys/61199b6c44e60800088f84b9)
 - [action ](https://github.com/RulaAlqasem/resty/actions)
 
 
@@ -61,5 +61,5 @@ Students will be creating and styling a Counter application. Look for the follow
 # lab 29 :
 - [pull req link](https://github.com/RulaAlqasem/resty/pull/8)
 - [repo link ](https://github.com/RulaAlqasem/resty)
-- [netlify](https://6118b374fc2c0bdac36c65a1--peaceful-ardinghelli-789209.netlify.app/)
+- [netlify](https://app.netlify.com/sites/ecstatic-bell-ef344d/deploys/61199b6c44e60800088f84b9)
 - [action ](https://github.com/RulaAlqasem/resty/actions)
