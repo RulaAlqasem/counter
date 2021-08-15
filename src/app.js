@@ -45,7 +45,7 @@ function addAction(history) {
 function App(props) {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
-  const [history, setHistory] = useState([0]);
+  const [history, setHistory] = useState([]);
   const [newhis] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -63,11 +63,13 @@ function App(props) {
     console.log(history1);
     console.log(hestory, "xtcyvuhbi");
     dispatch(addAction(hestory))
-    setHistory(hestory)
+    // setHistory(hestory)
 
+
+
+
+    history.push(hestory[0])
     localStorage.setItem('history', JSON.stringify(history));
-
-    // history.push(hestory[0])
 
   }
 
