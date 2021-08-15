@@ -12,6 +12,7 @@ import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
 import History from './components/history/History';
+// import { set } from "mongoose";
 
 
 const initialState = {
@@ -39,10 +40,12 @@ function addAction(history) {
 }
 
 
+
+
 function App(props) {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState([0]);
   const [newhis] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -60,11 +63,11 @@ function App(props) {
     console.log(history1);
     console.log(hestory, "xtcyvuhbi");
     dispatch(addAction(hestory))
-    // setHistory(hestory)
-    history.push(hestory[0])
+    setHistory(hestory)
+
     localStorage.setItem('history', JSON.stringify(history));
 
-
+    // history.push(hestory[0])
 
   }
 
@@ -125,7 +128,7 @@ function App(props) {
         //3 secs
         /> : <>{data && <Results data={data} />}       </>
       }
-      {history.length && <History history={history} showResult={showResult} loadFunction={loadFunction} setRequestParams={setRequestParams} />}
+      {history && <History history={history} showResult={showResult} loadFunction={loadFunction} setRequestParams={setRequestParams} />}
       <Footer />
 
 
