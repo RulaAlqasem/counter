@@ -47,7 +47,10 @@ Students will be creating and styling a Counter application. Look for the follow
 
 
 
+
 # lab 28 :
+
+![](./newwuml.png)
 - [pull req link](https://github.com/RulaAlqasem/resty/pull/8)
 - [repo link ](https://github.com/RulaAlqasem/resty)
 - [netlify](https://6118b374fc2c0bdac36c65a1--peaceful-ardinghelli-789209.netlify.app/)
