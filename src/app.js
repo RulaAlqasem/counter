@@ -42,12 +42,13 @@ function App(props) {
   function deleteFromHis(key) {
 
     let j = []
-    history.map((e, idx) => {
+    let a = history.map((e, idx) => {
       if (idx !== key) {
         return j.push(e)
       }
       return
     })
+    console.log(a);
     setHistory(j)
     setNewhis(j)
   }
