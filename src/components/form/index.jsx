@@ -38,11 +38,11 @@ function Form(props) {
   const [history2, dispatch] = useReducer(historyReducer, initialState);
 
   let c = props.newhis
-  useEffect(() => {
-    console.log("hi");
-    if (c) setHestory(c)
+  // useEffect(() => {
+  //   console.log("hi");
+  //   if (c) setHestory(c)
 
-  }, [method])
+  // }, [method])
   async function handleSubmit(e) {
     console.log(history2);
     console.log(jsonObj);
@@ -55,6 +55,8 @@ function Form(props) {
     };
 
     hestory.push(formData);
+
+
     dispatch(addAction(formData))
 
     let data;

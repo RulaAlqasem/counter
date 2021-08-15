@@ -30,7 +30,7 @@ function History(props) {
         <tr>
           <th>URL</th>
           <th>Methode</th>
-          <th>delete from history</th>
+          {/* <th>delete from history</th> */}
         </tr>
 
         {props.history && props.history.map((event, idx) => {
@@ -43,7 +43,7 @@ function History(props) {
 
               <td>methode: {event.method}</td>
 
-              <td onClick={(event) => { props.deleteFromHis(idx) }}>Delete</td>
+              {/* <td onClick={(event) => { props.deleteFromHis(idx) }}>Delete</td> */}
             </tr>
           )
         })}
