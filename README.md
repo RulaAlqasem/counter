@@ -48,8 +48,15 @@ Students will be creating and styling a Counter application. Look for the follow
 
 
 # lab 28 :
-- [pull req link](https://github.com/RulaAlqasem/resty/pull/1)
+- [pull req link](https://github.com/RulaAlqasem/resty/pull/8)
 - [repo link ](https://github.com/RulaAlqasem/resty)
-- [netlify](https://peaceful-ardinghelli-789209.netlify.app/)
+- [netlify](https://6118b374fc2c0bdac36c65a1--peaceful-ardinghelli-789209.netlify.app/)
 - [action ](https://github.com/RulaAlqasem/resty/actions)
 
+
+
+# lab 29 :
+- [pull req link](https://github.com/RulaAlqasem/resty/pull/8)
+- [repo link ](https://github.com/RulaAlqasem/resty)
+- [netlify](https://6118b374fc2c0bdac36c65a1--peaceful-ardinghelli-789209.netlify.app/)
+- [action ](https://github.com/RulaAlqasem/resty/actions)
