@@ -43,37 +43,63 @@ function Form(props) {
   //   if (c) setHestory(c)
 
   // }, [method])
+  let count = 0
   async function handleSubmit(e) {
     console.log(history2);
     console.log(jsonObj);
     console.log(setHestory);
     e.preventDefault();
 
-    const formData = {
-      method: method,
-      url: url,
-    };
-
-    hestory.push(formData);
 
 
-    dispatch(addAction(formData))
+
+
 
     let data;
     try {
-      // if (method === "GET" || method === "Delete") 
-      const req = await fetch(url)
+      if (method === "GET" || method === "DELETE") {
 
-      data = await req.json();
+        const req = await fetch(url)
+
+        data = await req.json();
 
 
+
+      }
+      if (method === "PUT" || method === "POST") {
+
+
+
+        data = {
+
+          Headers: 'application/json',
+          count: count + 1,
+          results: [jsonObj]
+
+        }
+
+
+
+      }
+
+
+      const formData = {
+        method: method,
+        url: url,
+        data: data
+      };
+
+      hestory.push(formData);
+      dispatch(addAction(formData))
 
       focus(method)
 
+      props.setRequestParams(formData)
       props.handleApiCall(formData, data, hestory);
       props.loadFunction(true)
 
     } catch (e) {
+
       console.log(e);
 
     }
