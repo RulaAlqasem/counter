@@ -2,23 +2,24 @@ import React from 'react'
 import './history.scss';
 function History(props) {
 
+
   return (
 
     <div>
       {/* <h1>History</h1>
-      {props.history ? props.history.map((event, idx) => {
+      {props.history ? props.history.map((e, idx) => {
 
         return (
-          <div key={event.toString()}>
+          <div key={e.toString()}>
             <br />
             <br />
-            <h id=''>URL: {event.url}</h>
+            <h id=''>URL: {e.url}</h>
             <br />
             <br />
-            <h>methode: {event.method}</h>
+            <h>methode: {e.method}</h>
             <br />
             <br />
-            <span onClick={(event) => { props.deleteFromHis(idx) }}>Delete</span>
+            <span onClick={(e) => { props.deleteFromHis(idx) }}>Delete</span>
           </div>
         )
       }) : <h3>impty</h3>} */}
@@ -33,17 +34,17 @@ function History(props) {
           {/* <th>delete from history</th> */}
         </tr>
 
-        {props.history && props.history.map((event, idx) => {
+        {props.history && props.history.map((e, idx) => {
 
 
           return (
-            <tr key={event.toString()}>
+            <tr key={e.toString()}>
 
-              <td id=''>URL: {event.url}</td>
+              <td id=''>URL: {e.url}</td>
 
-              <td>methode: {event.method}</td>
+              <td>methode: {e.method}</td>
 
-              {/* <td onClick={(event) => { props.deleteFromHis(idx) }}>Delete</td> */}
+              <td onClick={(event) => { props.showResult(e.method, e.url, e.data); props.loadFunction(true) }}>Show Results</td>
             </tr>
           )
         })}
@@ -51,7 +52,7 @@ function History(props) {
 
       </table>
 
-    </div>
+    </div >
 
   )
 }
